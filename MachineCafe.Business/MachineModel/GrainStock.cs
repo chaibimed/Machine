@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MachineCafe.WebApi.Contracts;
 using MachineCafe.WebApi.Models;
 
-namespace MachineCafe.Model
+namespace MachineCafe.Model.MachineModel
 {
     public class GrainStock : IGrainStock
     {

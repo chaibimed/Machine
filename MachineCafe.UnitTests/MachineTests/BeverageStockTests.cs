@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MachineCafe.Model;
+using MachineCafe.Model.MachineModel;
 using MachineCafe.WebApi.Models;
 using NUnit.Framework;
 

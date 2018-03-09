@@ -1,8 +1,8 @@
-﻿using System.Threading;
+using System.Threading;
 using System.Threading.Tasks;
 using MachineCafe.WebApi.Contracts;
 
-namespace MachineCafe.Model
+namespace MachineCafe.Model.MachineModel
 {
     /// <summary>
     /// In Real Case This class would comunicate with the machine's device responsible for water service

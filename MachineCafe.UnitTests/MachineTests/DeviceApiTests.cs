@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using MachineCafe.Model;
+using MachineCafe.Model.MachineModel;
 using MachineCafe.WebApi.Contracts;
 using MachineCafe.WebApi.Models;
 using Moq;
