@@ -11,7 +11,7 @@ namespace MachineCafe.UnitTests.MachineTests
         [Test]
         public async Task GivenIHaveTheLastState_WhenITurnOnTheDevice_IShouldGetDetailsAboutItsCurrentState()
         {
-            IMachineRepository repository;
+            IMachineRepository repository; 
             IWaterSource source;
             IGrainStock piles;
             IMugPlacer placer;
