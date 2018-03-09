@@ -7,9 +7,15 @@ namespace MachineCafe.Model.DatabaseAccess
 {
     public class EFRepository : IMachineRepository
     {
+        private readonly ApplicationContext _ctxt;
+
+        public EFRepository(ApplicationContext _ctxt)
+        {
+            this._ctxt = _ctxt;
+        }
         public IEnumerable<KeyValuePair<GrainType, int>> GetLastState()
         {
-            throw new System.NotImplementedException();
+
         }
 
         public Task SaveState(IEnumerable<KeyValuePair<GrainType, int>> snapshot)

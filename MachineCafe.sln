@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.WebApi", "Machi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.UnitTests", "MachineCafe.UnitTests\MachineCafe.UnitTests.csproj", "{C61A7BFD-317D-441B-A4FD-2021ECD22D27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.Model", "MachineCafe.Business\MachineCafe.Model.csproj", "{7E458F5D-4BA0-499E-8901-2E5F82800AFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCaf.Model", "MachineCafe.Business\MachineCaf.Model.csproj", "{7E458F5D-4BA0-499E-8901-2E5F82800AFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
