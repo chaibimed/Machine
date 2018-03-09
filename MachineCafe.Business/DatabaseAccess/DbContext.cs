@@ -8,7 +8,7 @@ namespace MachineCafe.Model.DatabaseAccess
         {
         }
 
-        public DbSet<MachineState> MachineState { get; set; }
+        public DbSet<MachineState> MachineState { get; set; } 
     }
 
     public class MachineState
