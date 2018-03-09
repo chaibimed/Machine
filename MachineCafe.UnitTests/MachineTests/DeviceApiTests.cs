@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using MachineCafe.Business;
-using MachineCafe.Business.Machine.Model;
+using MachineCafe.Model;
+using MachineCafe.WebApi.Contracts;
+using MachineCafe.WebApi.Models;
 using Moq;
 using NUnit.Framework;
 
@@ -52,7 +52,6 @@ namespace MachineCafe.UnitTests.MachineTests
         public async Task MakeCafeWithoutTurningOnMachineThrowExceptionTask()
         {
             var machine = MakeMachine();
-
             Assert.That(async() => await machine.MakeBeverage(GrainType.Cafe, 2,true),Throws.InvalidOperationException);
         }
 
@@ -66,12 +65,26 @@ namespace MachineCafe.UnitTests.MachineTests
             PhilipsMachineCafeApi machine = new PhilipsMachineCafeApi(source.Object, store.Object, placer.Object);
 
             await machine.TurnOn(InitParameters());
+            await machine.MakeBeverage(GrainType.Cafe, 2,false);
 
             store.Verify(p =>p.PoorGrain(GrainType.Cafe, 1));
             placer.Verify(p => p.SetNewGoblet(), Times.Exactly(1));
             source.Verify(p => p.Pour(), Times.Exactly(1));
         }
 
+        [Test]
+        public async Task GivenTheUserHasPlacedHisMug_MakeBeverage_Should_NotPlaceMug()
+        {
+            var source = new Mock<IWaterSource>();
+            var store = new Mock<IGrainStock>();
+            var placer = new Mock<IMugPlacer>();
+            PhilipsMachineCafeApi machine = new PhilipsMachineCafeApi(source.Object, store.Object, placer.Object);
+
+            await machine.TurnOn(InitParameters());
+            await machine.MakeBeverage(GrainType.Cafe, 2, true);
+
+            placer.Verify(p => p.SetNewGoblet(),Times.Never);
+        }
 
         private static List<KeyValuePair<GrainType, int>> InitParameters()
         {

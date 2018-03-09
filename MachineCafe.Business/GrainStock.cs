@@ -3,8 +3,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using MachineCafe.WebApi.Contracts;
+using MachineCafe.WebApi.Models;
 
-namespace MachineCafe.Business.Machine.Model
+namespace MachineCafe.Model
 {
     public class GrainStock : IGrainStock
     {

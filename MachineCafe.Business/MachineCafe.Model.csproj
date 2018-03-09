@@ -7,8 +7,8 @@
     <ProjectGuid>{7E458F5D-4BA0-499E-8901-2E5F82800AFD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MachineCafe.Business</RootNamespace>
-    <AssemblyName>MachineCafe.Business</AssemblyName>
+    <RootNamespace>MachineCafe.Model</RootNamespace>
+    <AssemblyName>MachineCafe.Model</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,14 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GrainType.cs" />
-    <Compile Include="IBevrageStock.cs" />
-    <Compile Include="IMachineApi.cs" />
-    <Compile Include="IMachineRepository.cs" />
-    <Compile Include="IMugPlacer.cs" />
-    <Compile Include="IWaterSource.cs" />
-    <Compile Include="Machine.Model\GrainStock.cs" />
-    <Compile Include="Machine.Model\PhilipsMachineCafeApi.cs" />
+    <Compile Include="GrainStock.cs" />
+    <Compile Include="MugPlacer.cs" />
+    <Compile Include="PhilipsMachineCafeApi.cs" />
+    <Compile Include="WaterSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -60,6 +56,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MachineCage.Api\MachineCafe.WebApi.csproj">
+      <Project>{4CA5F25F-6AB8-451E-98DB-3C5C521DA14F}</Project>
+      <Name>MachineCafe.WebApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

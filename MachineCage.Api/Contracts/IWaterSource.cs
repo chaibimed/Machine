@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace MachineCafe.Business
+namespace MachineCafe.WebApi.Contracts
 {
     public interface IWaterSource
     {

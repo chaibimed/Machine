@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using MachineCafe.Business;
-using MachineCafe.Business.Machine.Model;
+using MachineCafe.Model;
+using MachineCafe.WebApi.Models;
 using NUnit.Framework;
 
 namespace MachineCafe.UnitTests.MachineTests

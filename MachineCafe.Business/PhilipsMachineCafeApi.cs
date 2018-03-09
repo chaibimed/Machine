@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MachineCafe.WebApi.Contracts;
+using MachineCafe.WebApi.Models;
 
-namespace MachineCafe.Business.Machine.Model
+namespace MachineCafe.Model
 {
     public class PhilipsMachineCafeApi : IDeviceApi
     {
         private readonly IWaterSource source;
         private readonly IGrainStock piles;
-        private IMugPlacer placer;
+        private readonly IMugPlacer placer;
         private bool _isOn;
 
         public PhilipsMachineCafeApi(IWaterSource source, IGrainStock piles, IMugPlacer placer)
@@ -47,11 +49,15 @@ namespace MachineCafe.Business.Machine.Model
             return new KeyValuePair<GrainType, int>(type, this.piles.GetLevelOfStock(type).Result);
         }
 
-        public Task MakeBeverage(GrainType type, int sugarAmount, bool SelfMug)
+        public async Task MakeBeverage(GrainType type, int sugarAmount, bool SelfMug)
         {
             if(!this._isOn)
                 throw new InvalidOperationException(Properties.Resources.MustBeOn);
-            return Task.FromResult(0);
+
+            if (!SelfMug)
+                await this.placer.SetNewGoblet();
+             await this.source.Pour();
+             await this.piles.PoorGrain(type, 1);
         }
     }
 }

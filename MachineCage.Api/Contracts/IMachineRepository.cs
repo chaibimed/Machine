@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using MachineCafe.WebApi.Models;
 
-namespace MachineCafe.Business
+namespace MachineCafe.WebApi.Contracts
 {
     public interface IMachineRepository
     {

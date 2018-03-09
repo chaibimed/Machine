@@ -136,6 +136,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Models\GrainType.cs" />
+    <Compile Include="Contracts\IDeviceApi.cs" />
+    <Compile Include="Contracts\IGrainStock.cs" />
+    <Compile Include="Contracts\IMachineRepository.cs" />
+    <Compile Include="Contracts\IMugPlacer.cs" />
+    <Compile Include="Contracts\IWaterSource.cs" />
     <Compile Include="Controllers\CafeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -162,7 +168,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

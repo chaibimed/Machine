@@ -96,9 +96,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MachineCafe.Business\MachineCafe.Business.csproj">
+    <ProjectReference Include="..\MachineCafe.Business\MachineCafe.Model.csproj">
       <Project>{7E458F5D-4BA0-499E-8901-2E5F82800AFD}</Project>
-      <Name>MachineCafe.Business</Name>
+      <Name>MachineCafe.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\MachineCage.Api\MachineCafe.WebApi.csproj">
       <Project>{4CA5F25F-6AB8-451E-98DB-3C5C521DA14F}</Project>
