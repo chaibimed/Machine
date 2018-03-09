@@ -4,6 +4,7 @@
     {
         The,
         Cafe,
-        Chocolat
+        Chocolat,
+        Sucre
     }
 }

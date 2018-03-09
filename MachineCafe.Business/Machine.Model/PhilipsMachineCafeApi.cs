@@ -1,12 +1,15 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MachineCafe.Business.Machine.Model
 {
     public class PhilipsMachineCafeApi : IDeviceApi
     {
-        private IWaterSource source;
-        private IGrainStock piles;
+        private readonly IWaterSource source;
+        private readonly IGrainStock piles;
         private IMugPlacer placer;
+        private bool _isOn;
 
         public PhilipsMachineCafeApi(IWaterSource source, IGrainStock piles, IMugPlacer placer)
         {
@@ -15,19 +18,40 @@ namespace MachineCafe.Business.Machine.Model
             this.placer = placer;
         }
 
-        public Task TurnOn()
+        public async Task TurnOn(IEnumerable<KeyValuePair<GrainType, int>> initValues)
         {
-            throw new System.NotImplementedException();
+            if (this._isOn)
+                throw new InvalidOperationException(Properties.Resources.AlreadyOn);
+            foreach (var seed in initValues)
+            {
+                await piles.SupplyGrain(seed.Key, seed.Value);
+            }
+            await source.ConnectToSource();
+            this._isOn = true;
         }
 
-        public Task TurnOff()
+        public async Task<IEnumerable<KeyValuePair<GrainType, int>>> TurnOff()
         {
-            throw new System.NotImplementedException();
+            await this.source.DisconnectFromSource();
+            var stateSnapshot = new List<KeyValuePair<GrainType, int>>();
+            stateSnapshot.Add(GetItem(GrainType.Cafe));
+            stateSnapshot.Add(GetItem(GrainType.Sucre));
+            stateSnapshot.Add(GetItem(GrainType.Chocolat));
+            stateSnapshot.Add(GetItem(GrainType.The));
+            this._isOn = false;
+            return stateSnapshot;
+        }
+
+        private  KeyValuePair<GrainType, int> GetItem(GrainType type)
+        {
+            return new KeyValuePair<GrainType, int>(type, this.piles.GetLevelOfStock(type).Result);
         }
 
         public Task MakeBeverage(GrainType type, int sugarAmount, bool SelfMug)
         {
-            throw new System.NotImplementedException();
+            if(!this._isOn)
+                throw new InvalidOperationException(Properties.Resources.MustBeOn);
+            return Task.FromResult(0);
         }
     }
 }

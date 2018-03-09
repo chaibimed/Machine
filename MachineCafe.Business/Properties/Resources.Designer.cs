@@ -61,11 +61,29 @@ namespace MachineCafe.Business.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Machine already on.
+        /// </summary>
+        internal static string AlreadyOn {
+            get {
+                return ResourceManager.GetString("AlreadyOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No more grain in the stock.
         /// </summary>
         internal static string EmptySource {
             get {
                 return ResourceManager.GetString("EmptySource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please be sure that you&apos;ve opned the machine.
+        /// </summary>
+        internal static string MustBeOn {
+            get {
+                return ResourceManager.GetString("MustBeOn", resourceCulture);
             }
         }
     }

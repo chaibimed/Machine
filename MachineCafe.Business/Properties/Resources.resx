@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AlreadyOn" xml:space="preserve">
+    <value>Machine already on</value>
+  </data>
   <data name="EmptySource" xml:space="preserve">
     <value>No more grain in the stock</value>
+  </data>
+  <data name="MustBeOn" xml:space="preserve">
+    <value>Please be sure that you've opned the machine</value>
   </data>
 </root>
