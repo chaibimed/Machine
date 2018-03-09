@@ -22,9 +22,17 @@ namespace MachineCafe.AcceptanceTests
         [Test]
         public async Task GivenTheMachineClosed_WhenAttemptToOpenIt_IShouldGetOkResult()
         {
-            var request = new HttpRequestMessage(HttpMethod.Post, new Uri("http://localhost:2000/api/user/getReady"));
-            var result = await _client.SendAsync(request);
+            var result = await _client.PostAsync("http://localhost:2000/api/user/getReady",null);
             Assert.That(result.StatusCode,Is.EqualTo(HttpStatusCode.OK));
+        }
+
+        [Test]
+        public async Task GivenTheMachineOpen_WhenIOpenIt_ItShouldReturnConfilct()
+        {
+            var result = await _client.PostAsync("http://localhost:2000/api/user/getReady", null);
+            Assert.That(result.StatusCode, Is.EqualTo(HttpStatusCode.BadRequest));
+            Assert.That(result.ReasonPhrase, Is.EqualTo(HttpStatusCode.Conflict));
+
         }
 
 

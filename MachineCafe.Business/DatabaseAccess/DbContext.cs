@@ -11,7 +11,6 @@ namespace MachineCafe.Model.DatabaseAccess
 
         public DbSet<MachineState> MachineState { get; set; }
         public DbSet<UserPreferences> UserPreferenceses { get; set; }
-
     }
 
    

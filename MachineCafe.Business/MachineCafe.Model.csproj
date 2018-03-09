@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="DatabaseAccess\DbContext.cs" />
     <Compile Include="DatabaseAccess\EFRepository.cs" />
+    <Compile Include="DatabaseAccess\MachineState.cs" />
+    <Compile Include="DatabaseAccess\UserPreferences.cs" />
     <Compile Include="MachineModel\GrainStock.cs" />
     <Compile Include="MachineModel\MugPlacer.cs" />
     <Compile Include="MachineModel\PhilipsMachineCafeApi.cs" />
