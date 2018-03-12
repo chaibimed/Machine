@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace MachineCafe.WebApi.Contracts
+namespace MachineCafe.Model
 {
     public interface IMugPlacer
     {

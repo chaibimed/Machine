@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using MachineCafe.WebApi.Contracts;
 
 namespace MachineCafe.Model.MachineModel
 {

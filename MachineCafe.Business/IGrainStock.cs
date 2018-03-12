@@ -1,8 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using MachineCafe.WebApi.Models;
+using MachineCafe.Model.MachineModel;
 
-namespace MachineCafe.WebApi.Contracts
+namespace MachineCafe.Model
 {
     public interface IGrainStock
     {

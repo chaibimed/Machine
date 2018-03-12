@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.UnitTests", "Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.Model", "MachineCafe.Business\MachineCafe.Model.csproj", "{7E458F5D-4BA0-499E-8901-2E5F82800AFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.DataAccess", "DataAccess\MachineCafe.DataAccess.csproj", "{1DD60D5A-F0A3-4C24-B099-AAABCE3ECFD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{7E458F5D-4BA0-499E-8901-2E5F82800AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E458F5D-4BA0-499E-8901-2E5F82800AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E458F5D-4BA0-499E-8901-2E5F82800AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD60D5A-F0A3-4C24-B099-AAABCE3ECFD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD60D5A-F0A3-4C24-B099-AAABCE3ECFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD60D5A-F0A3-4C24-B099-AAABCE3ECFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD60D5A-F0A3-4C24-B099-AAABCE3ECFD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

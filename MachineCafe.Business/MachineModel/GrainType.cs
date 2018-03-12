@@ -1,4 +1,4 @@
-﻿namespace MachineCafe.WebApi.Models
+﻿namespace MachineCafe.Model.MachineModel
 {
     public enum GrainType
     {

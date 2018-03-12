@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MachineCafe.Api.Infrastructure;
+using MachineCafe.WebApi.Infrastructure;
 using Moq;
 using Ninject;
 using Ninject.Extensions.ChildKernel;
@@ -56,7 +56,7 @@ namespace MachineCafe.UnitTests
         }
 
         [Test]
-        public void GivenSingletonConfiguration_WhenCallingBeginScope_EachTimeShouldReturnNewInstance()
+        public void GivenScopedConfiguration_WhenCallingBeginScope_EachTimeShouldReturnNewInstance()
         {
             //arrange
             var depResolver = new NinjectResolver();
@@ -67,6 +67,18 @@ namespace MachineCafe.UnitTests
             var instance2 = depResolver.BeginScope().GetService(typeof(IFakeService));
             
             Assert.That(instance1, Is.Not.EqualTo(instance2));
+        }
+
+        [Test]
+        public void GivenSingletonConfiguration_WhenCallingBeginScope_EachTimeShouldReturnTheSame()
+        {
+            //arrange
+            var depResolver = new NinjectResolver(new FakeNinjectModule());
+            //act
+            var instance1 = depResolver.BeginScope().GetService(typeof(IFakeService));
+            var instance2 = depResolver.BeginScope().GetService(typeof(IFakeService));
+
+            Assert.That(instance1, Is.EqualTo(instance2));
         }
     }
 

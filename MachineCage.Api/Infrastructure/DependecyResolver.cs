@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Web.Http.Dependencies;
 using Ninject;
 using Ninject.Extensions.ChildKernel;
 using Ninject.Modules;
 
-namespace MachineCafe.Api.Infrastructure
+namespace MachineCafe.WebApi.Infrastructure
 {
     public class NinjectResolver : IDependencyResolver, IDependencyScope
     {
@@ -42,7 +43,10 @@ namespace MachineCafe.Api.Infrastructure
 
         public IDependencyScope BeginScope()
         {
-            return new NinjectResolver(new ChildKernel(this._kernel,_requestScopedConfigurations));
+            if (_requestScopedConfigurations != null && _requestScopedConfigurations.Length > 0)
+                return new NinjectResolver(new ChildKernel(this._kernel, _requestScopedConfigurations));
+            else
+                return new NinjectResolver(new ChildKernel(this._kernel));
         }
     }
 

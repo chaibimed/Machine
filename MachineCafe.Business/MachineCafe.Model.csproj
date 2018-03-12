@@ -38,6 +38,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -49,11 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseAccess\DbContext.cs" />
-    <Compile Include="DatabaseAccess\EFRepository.cs" />
-    <Compile Include="DatabaseAccess\MachineState.cs" />
-    <Compile Include="DatabaseAccess\UserPreferences.cs" />
+    <Compile Include="Configurations\Configurations.cs" />
+    <Compile Include="IDeviceApi.cs" />
+    <Compile Include="IGrainStock.cs" />
+    <Compile Include="IMugPlacer.cs" />
+    <Compile Include="IWaterSource.cs" />
     <Compile Include="MachineModel\GrainStock.cs" />
+    <Compile Include="MachineModel\GrainType.cs" />
     <Compile Include="MachineModel\MugPlacer.cs" />
     <Compile Include="MachineModel\PhilipsMachineCafeApi.cs" />
     <Compile Include="MachineModel\WaterSource.cs" />
@@ -69,12 +79,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MachineCage.Api\MachineCafe.WebApi.csproj">
-      <Project>{4CA5F25F-6AB8-451E-98DB-3C5C521DA14F}</Project>
-      <Name>MachineCafe.WebApi</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
