@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MachineCafe.WebApi</RootNamespace>
-    <AssemblyName>MachineCafe.WebApi</AssemblyName>
+    <RootNamespace>MachineCafe.Resources</RootNamespace>
+    <AssemblyName>MachineCafe.Resources</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -184,11 +184,11 @@
     <EmbeddedResource Include="Properties\Resources.fr-FR.resx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\MachineCafe.DataAccess.csproj">
+    <ProjectReference Include="..\Data\MachineCafe.Data.csproj">
       <Project>{1DD60D5A-F0A3-4C24-B099-AAABCE3ECFD2}</Project>
-      <Name>MachineCafe.DataAccess</Name>
+      <Name>MachineCafe.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MachineCafe.Business\MachineCafe.Model.csproj">
+    <ProjectReference Include="..\MachineCafe.Model\MachineCafe.Model.csproj">
       <Project>{7E458F5D-4BA0-499E-8901-2E5F82800AFD}</Project>
       <Name>MachineCafe.Model</Name>
     </ProjectReference>

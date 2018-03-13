@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3FC6C270
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.AcceptanceTests", "MachineCafe.AcceptanceTests\MachineCafe.AcceptanceTests.csproj", "{1AA7AF1E-FC8F-4E0D-AC33-A15333AC0729}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.WebApi", "MachineCage.Api\MachineCafe.WebApi.csproj", "{4CA5F25F-6AB8-451E-98DB-3C5C521DA14F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.Resources", "MachineCafe.Resources\MachineCafe.Resources.csproj", "{4CA5F25F-6AB8-451E-98DB-3C5C521DA14F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.UnitTests", "MachineCafe.UnitTests\MachineCafe.UnitTests.csproj", "{C61A7BFD-317D-441B-A4FD-2021ECD22D27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.Model", "MachineCafe.Business\MachineCafe.Model.csproj", "{7E458F5D-4BA0-499E-8901-2E5F82800AFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.Model", "MachineCafe.Model\MachineCafe.Model.csproj", "{7E458F5D-4BA0-499E-8901-2E5F82800AFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.DataAccess", "DataAccess\MachineCafe.DataAccess.csproj", "{1DD60D5A-F0A3-4C24-B099-AAABCE3ECFD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineCafe.Data", "Data\MachineCafe.Data.csproj", "{1DD60D5A-F0A3-4C24-B099-AAABCE3ECFD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

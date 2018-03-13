@@ -9,7 +9,7 @@ using NUnit.Framework;
 
 namespace MachineCafe.AcceptanceTests
 {
-    public class AsUser_ICanOpenTheCafeMachine_SoThatItGetsReady
+    public class AsUser_ICanTurnOff_Machine
     {
         private HttpClient _client;
         private readonly string _getReadyUrl = "http://localhost:2000/api/user/getReady";
@@ -25,19 +25,8 @@ namespace MachineCafe.AcceptanceTests
         [Test]
         public async Task GivenTheMachineClosed_WhenAttemptToOpenIt_IShouldGetOkResult()
         {
-            var result = await _client.PostAsync(_getReadyUrl,null);
-            Assert.That(result.StatusCode,Is.EqualTo(HttpStatusCode.OK));
+            var result = await _client.PostAsync(_getReadyUrl, null);
+            Assert.That(result.StatusCode, Is.EqualTo(HttpStatusCode.OK));
         }
-
-        [Test]
-        public async Task GivenTheMachineOpen_WhenIOpenIt_ItShouldReturnConfilct()
-        {
-            var firstCall = await _client.PostAsync(_getReadyUrl, null);
-            var secondCall = await _client.PostAsync(_getReadyUrl, null);
-
-            Assert.That(secondCall.StatusCode, Is.EqualTo(HttpStatusCode.Conflict));
-            Assert.That(await secondCall.Content.ReadAsStringAsync(), Is.EqualTo("\"Machine already on\""));
-        }
-
     }
 }

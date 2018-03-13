@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsUser_ICanOpenTheCafeMachine_SoThatItGetsReady.cs" />
+    <Compile Include="AsUser_ICanTurnOff_Machine.cs" />
     <Compile Include="DbTestInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,13 +79,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\MachineCafe.DataAccess.csproj">
+    <ProjectReference Include="..\Data\MachineCafe.Data.csproj">
       <Project>{1DD60D5A-F0A3-4C24-B099-AAABCE3ECFD2}</Project>
-      <Name>MachineCafe.DataAccess</Name>
+      <Name>MachineCafe.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MachineCage.Api\MachineCafe.WebApi.csproj">
+    <ProjectReference Include="..\MachineCafe.Resources\MachineCafe.Resources.csproj">
       <Project>{4CA5F25F-6AB8-451E-98DB-3C5C521DA14F}</Project>
-      <Name>MachineCafe.WebApi</Name>
+      <Name>MachineCafe.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
